@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Direct4meChallenge</string>
+    <string name="light_mode">Light mode</string>
+    <string name="dark_mode">Dark mode</string>
+    <string name="retrieve">Retrieve</string>
+    <string name="country">Country:</string>
+    <string name="theme">Theme</string>
+    <string name="dark_theme">Dark theme</string>
+    <string name="light_theme">Light theme</string>
+</resources>
