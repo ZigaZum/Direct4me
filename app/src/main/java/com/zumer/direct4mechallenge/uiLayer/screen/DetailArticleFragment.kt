@@ -30,6 +30,7 @@ import coil.compose.rememberAsyncImagePainter
 import com.zumer.direct4mechallenge.R
 import com.zumer.direct4mechallenge.dataLayer.model.Article
 import com.zumer.direct4mechallenge.uiLayer.MainVewModel
+import com.zumer.direct4mechallenge.util.DateFormatter
 
 class DetailArticleFragment : Fragment() {
     private val viewModel: MainVewModel by activityViewModels()
@@ -54,7 +55,7 @@ class DetailArticleFragment : Fragment() {
 
         return ComposeView(requireContext()).apply {
             setContent {
-                CustomTheme() {
+                CustomTheme {
                     ArticleDetail()
                 }
             }
@@ -119,7 +120,7 @@ class DetailArticleFragment : Fragment() {
                         fontSize = 16.sp
                     )
                     Text(
-                        text = selectedArticle.publishedAt,
+                        text = DateFormatter.formatDateFromString(selectedArticle.publishedAt, "dd. MM. yyyy HH:mm"),
                         fontFamily = FontFamily(Font(R.font.jost_variablefont_wght)),
                         fontSize = 12.sp
                     )

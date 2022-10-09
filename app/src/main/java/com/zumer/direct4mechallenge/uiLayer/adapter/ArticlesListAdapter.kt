@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.zumer.direct4mechallenge.dataLayer.model.Article
 import com.zumer.direct4mechallenge.databinding.RowArticlesItemBinding
+import com.zumer.direct4mechallenge.util.DateFormatter
 
 class ArticlesListAdapter(private val onClickListener: OnClickListener) :
     ListAdapter<Article, ArticlesListAdapter.ArticleViewHolder>(ArticleComparator()) {
@@ -26,11 +27,8 @@ class ArticlesListAdapter(private val onClickListener: OnClickListener) :
 
     inner class ArticleViewHolder(private var binding: RowArticlesItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(article: Article) {
-//            Glide.with(binding.ivArticle)
-//                .load(article.urlToImage)
-//                .into(binding.ivArticle)
             binding.ivArticle.load(article.urlToImage)
-            binding.tvDate.text = article.publishedAt
+            binding.tvDate.text = DateFormatter.formatDateFromString(article.publishedAt, "dd. MM. yyyy")
             binding.tvTitle.text = article.title
         }
     }
